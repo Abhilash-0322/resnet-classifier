@@ -2,16 +2,16 @@ from fastapi import FastAPI, UploadFile, File
 from torchvision import transforms
 from PIL import Image
 import torch
-from fastapi.middleware.cors import CORSMiddleware
+# from fastapi.middleware.cors import CORSMiddleware
 
 app = FastAPI()
-app.add_middleware(
-    CORSMiddleware,
-    allow_origins=["*"],  # Allow all origins (you can restrict this in production)
-    allow_credentials=True,
-    allow_methods=["*"],  # Allow all methods
-    allow_headers=["*"],  # Allow all headers
-)
+# app.add_middleware(
+#     # CORSMiddleware,
+#     allow_origins=["*"],  # Allow all origins (you can restrict this in production)
+#     allow_credentials=True,
+#     allow_methods=["*"],  # Allow all methods
+#     allow_headers=["*"],  # Allow all headers
+# )
 
 # Load a pretrained model for image classification
 model = torch.hub.load('pytorch/vision', 'resnet18', pretrained=True)
